@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/background.png");
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Andada Pro", serif;
+}
+
+p,
+button {
+    font-family: "Archivo", sans-serif;
+}
+
+.header {
+    width: 80%;
+    height: 11rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.header .nav-links .link {
+    transition: all 0.5s;
+}
+
+.header .nav-links .link:hover {
+    transform: translateY(-5px);
+}
+
+main {
+    width: 80%;
+    height: 100%;
+    display: flex;
+}
+
+.conteudo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.descricao {
+    width: 100%;
+    height: 100%;
+}
+
+.descricao .title {
+    font-size: 64px;
+    line-height: 70px;
+    margin-bottom: 2rem;
+}
+
+.descricao .title-chapeu {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.descricao p {
+    font-size: 22px;
+    line-height: 150%;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.botoes {
+    width: 100%;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 1.5rem;
+}
+
+.botao {
+    width: 15rem;
+    height: 3.25rem;
+    border: 1px solid #f1a5b1;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.5s;
+}
+
+.botao:hover {
+    transform: translateY(-5px);
+}
+
+.botao-primary {
+    background-color: #f1a5b1;
+    color: #0b0a0a;
+    border: none;
+}
+
+.botao-primary:hover {
+    background-color: #f1a5b00d;
+    border: 1px solid #f1a5b1;
+    color: #fff;
+}
+
+.botao-secondary:hover {
+    background-color: #f1a5b1;
+    color: #0b0a0a;
+    font-weight: 700;
+}
+
+.ilustracao {
+    background-image: url("../img/ilustração.svg");
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
