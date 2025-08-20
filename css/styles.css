@@ -5,14 +5,16 @@
 }
 
 body {
-    width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-image: url("../img/background.png");
     background-size: cover;
+    background-position: center;
     color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden; /* evita scroll lateral */
+    padding-inline: 5%; /* espaçamento lateral */
 }
 
 h1,
@@ -30,7 +32,8 @@ button {
 }
 
 .header {
-    width: 80%;
+    width: 100%;
+    max-width: 1200px;
     height: 11rem;
     display: flex;
     flex-direction: row;
@@ -52,20 +55,23 @@ button {
 }
 
 main {
-    width: 80%;
-    height: 100%;
+    width: 100%;
+    max-width: 1200px;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* garante quebra no mobile */
 }
 
 .conteudo {
-    width: 100%;
-    height: 100%;
     display: flex;
+    flex: 1;
+    flex-wrap: wrap; /* permite empilhar no mobile */
+    gap: 2rem;
 }
 
 .descricao {
-    width: 100%;
-    height: 100%;
+    flex: 1 1 400px; /* ocupa pelo menos 400px */
 }
 
 .descricao .title {
@@ -87,12 +93,8 @@ main {
 }
 
 .botoes {
-    width: 100%;
-    height: 52px;
-
     display: flex;
     align-items: center;
-
     gap: 1.5rem;
 }
 
@@ -135,9 +137,92 @@ main {
 }
 
 .ilustracao {
-    background-image: url("../img/ilustração.svg");
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: contain;
+    flex: 1 1 300px;
+    background: url("../img/ilustração.svg") no-repeat center / contain;
+    aspect-ratio: 1 / 1; /* controla proporção automática */
+    height: auto; /* sem altura fixa */
+}
+
+/* Responsive Styles */
+
+@media (max-width: 1200px) {
+    .header {
+        height: 9rem;
+    }
+    .conteudo {
+        flex-direction: column;
+    }
+    .ilustracao {
+        order: 1;
+    }
+    .descricao {
+        order: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        width: 100%;
+        height: 8rem;
+    }
+    .header .logo {
+        height: 4rem;
+    }
+
+    .descricao .title-chapeu {
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .descricao .title {
+        font-size: 40px;
+        line-height: 44px;
+        font-weight: 800;
+        width: 16.875rem;
+    }
+    .descricao p {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+    }
+
+    .botoes {
+        flex-direction: column;
+        gap: 1rem;
+        height: 100%;
+    }
+    .botao {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .header {
+        justify-content: center;
+        position: relative;
+    }
+
+    .header .nav-links {
+        display: none !important;
+    }
+
+    .header a {
+        flex: 0 1 auto;
+    }
+
+    .header .logo {
+        margin: 0 auto;
+        display: block;
+        height: 3.5rem;
+    }
+}
+
+@media (max-width: 390px) {
+    .header {
+        height: 6rem;
+        justify-content: center;
+    }
+
+    .header .logo {
+        height: 3rem;
+    }
 }
