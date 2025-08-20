@@ -9,12 +9,14 @@ body {
     background-image: url("../img/background.png");
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-x: hidden; /* evita scroll lateral */
-    padding-inline: 5%; /* espaçamento lateral */
+    overflow-x: hidden;
+    padding-inline: 5%;
 }
 
 h1,
